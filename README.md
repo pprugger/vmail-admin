@@ -18,3 +18,19 @@ Further, as `vmail-admin` is written in Bash, you should have bash installed.
 * Make it executable with "chmod +x vmail-admin.sh".
 * Run it with "./vmail-admin.sh".
 
+# Usage
+
+You can change the parameters for the script under Definitions in the script.
+Start the script with:
+```shell
+./vmail-admin.sh
+```
+
+## Main Menu
+
+Menu items are:
+	1) User Management
+	2) Domain Management
+	3) Aliases Management
+	4) Database Management
+	5) Exit
