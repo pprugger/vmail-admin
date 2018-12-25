@@ -15,7 +15,7 @@ new_user_quota=2048 #in MB
 new_user_enabled=true
 new_user_sendonly=false
 max_quota=4096 #in MB
-init_database_user=vmail
+init_database_user=vmail #User which will read the database
 
 ###################################################
 ################  MENUS  ##########################
@@ -23,11 +23,11 @@ menu()
 {
 	printline
 	echo "Welcome!"
-	echo "1) User Management"
-	echo "2) Domain Management"
-	echo "3) Aliases Management"
-	echo "4) Database Management"
-	echo "5) Exit"
+		echo "1) User Management"
+		echo "2) Domain Management"
+		echo "3) Aliases Management"
+		echo "4) Database Management"
+		echo "5) Exit"
 	printline
 	read choose
 
