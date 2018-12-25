@@ -59,8 +59,8 @@ Menu items are:
 
 # How to contribute
 
-Create new issues if you find bugs or want to a new features. Pull requests are
-very welcomed.
+Create new issues if you find bugs or want to add new features. Pull requests are
+very welcome.
 
 # License
 
