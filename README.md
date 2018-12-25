@@ -29,8 +29,8 @@ Start the script with:
 ## Main Menu
 
 Menu items are:
-	1) User Management
-	2) Domain Management
-	3) Aliases Management
-	4) Database Management
-	5) Exit
+1. User Management
+2. Domain Management
+3. Aliases Management
+4. Database Management
+5. Exit
