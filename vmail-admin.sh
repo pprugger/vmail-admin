@@ -1,12 +1,5 @@
 #!/bin/bash
 
-## TODO
-#Change quota
-#show aliases
-#delete aliases
-#add aliases
-#database init
-
 ###################################################
 ################  DEFINITIONS  ####################
 database_name=vmail
