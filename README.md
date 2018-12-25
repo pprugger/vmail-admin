@@ -3,7 +3,7 @@ CLI Tool for managing vmail databases
 
 `vmail-admin` is a command line tool for managing a mail-server database
 based on the great [HowTo](https://thomas-leister.de/en/mailserver-debian-stretch) ([german version](https://thomas-leister.de/mailserver-debian-stretch/))
-from [Thomas Leister](https://thomas-leister.de) written in Rust.
+from [Thomas Leister](https://thomas-leister.de) written in Bash.
 
 ## Prerequisites
 
