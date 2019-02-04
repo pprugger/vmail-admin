@@ -5,8 +5,8 @@
 database_name=vmail
 database_user=root
 new_user_quota=2048 #in MB
-new_user_enabled=true
-new_user_sendonly=false
+new_user_enabled=1
+new_user_sendonly=0
 max_quota=4096 #in MB
 init_database_user=vmail #User which will read the database
 
