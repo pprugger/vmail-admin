@@ -1,17 +1,8 @@
 #!/bin/bash
-###################################################
-################  DEFINITIONS  ####################
-database_name=vmail
-database_user=root
-database_password="439c5ab46883c46ced943f799bac5008"
-new_user_quota=2048 #in MB
-new_user_enabled=1
-new_user_sendonly=0
-max_quota=4096 #in MB
-init_database_user=vmail #User which will read the database
 
-###################################################
-################  MENUS  ##########################
+# Load creds: path to .creds file
+source /root/scripts/vmail-admin/.creds
+
 menu()
 {
 	printline
