@@ -18,6 +18,8 @@ Further, as `vmail-admin` is written in Bash, you should have bash installed.
 * Make it executable with "chmod +x vmail-admin.sh".
 * Run it with "./vmail-admin.sh".
 
+* Copy .creds.example over to .creds file and make your changes
+
 # Usage
 
 You can change the parameters for the script under Definitions in the script.
