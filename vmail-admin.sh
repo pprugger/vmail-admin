@@ -460,7 +460,7 @@ add_user()
 
 	hash=`doveadm pw -s SHA512-CRYPT`
 
-	mysql -u $database_user -p"${database_password}" -D $database_name -e "insert into accounts (username, domain, password, quota, enabled, sendonly) values ('$username', '$domain', '$hash', '$new_user_quota', '$new_user_enabled', '$new_user_sendonly');"
+	mysql -u $database_user -p"${database_password}" -D $database_name -e "insert into accounts (username, domain, password, quota, enabled, sendonly, autosent) values ('$username', '$domain', '$hash', '$new_user_quota', '$new_user_enabled', '$new_user_sendonly', '$new_user_autosent');"
 
 	printline
 	echo "User $username@$domain has been added!"
