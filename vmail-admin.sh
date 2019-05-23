@@ -1,10 +1,9 @@
 #!/bin/bash
-
 ###################################################
 ################  DEFINITIONS  ####################
 database_name=vmail
 database_user=root
-database_password="password"
+database_password="439c5ab46883c46ced943f799bac5008"
 new_user_quota=2048 #in MB
 new_user_enabled=1
 new_user_sendonly=0
@@ -493,8 +492,8 @@ change_pass()
 		echo "Changing password"
 		echo "Type in your new password"
 		hash=`doveadm pw -s SHA512-CRYPT`
-		mysql -u $database_user -p"${database_password}" -D $database_name -e "update accounts set password='$hash' where username='$user';"
-		echo "Password of user $user changed!"
+		mysql -u $database_user -p"${database_password}" -D $database_name -e "update accounts set password='$hash' where username='$username' and domain='$domain';"
+		echo "Password of user $username@$domain changed with password $hash!"
 		user_menu
 	else
 		user_menu
