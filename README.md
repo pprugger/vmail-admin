@@ -18,6 +18,8 @@ Further, as `vmail-admin` is written in Bash, you should have bash installed.
 * Make it executable with "chmod +x vmail-admin.sh".
 * Run it with "./vmail-admin.sh".
 
+* Copy .creds.example over to .creds file and make your changes
+
 # Usage
 
 You can change the parameters for the script under Definitions in the script.
@@ -35,7 +37,8 @@ Menu items are:
     2. Delete user
     3. Change user password
     4. Change user quota
-    5. Back to main menu
+    5. Change autosent status #wether or not to auto bcc when sent from. Use this for accounts where emails are sent via smtp and not a IMAP client
+    6. Back to main menu
 2. Domain Management
     1. Add Domain
     2. Delete Domain
