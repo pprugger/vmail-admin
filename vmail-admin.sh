@@ -488,8 +488,8 @@ change_pass()
 		echo "Changing password"
 		echo "Type in your new password"
 		hash=`doveadm pw -s SHA512-CRYPT`
-		mysql -u $database_user -D $database_name -e "update accounts set password='$hash' where username='$user';"
-		echo "Password of user $user changed!"
+		mysql -u $database_user -D $database_name -e "update accounts set password='$hash' where username='$username';"
+		echo "Password of user $username changed!"
 		user_menu
 	else
 		user_menu
