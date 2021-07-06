@@ -35,7 +35,9 @@ Menu items are:
     2. Delete user
     3. Change user password
     4. Change user quota
-    5. Back to main menu
+    5. Change user sendonly
+    6. Enable/Disable user
+    7. Back to main menu
 2. Domain Management
     1. Add Domain
     2. Delete Domain
@@ -47,7 +49,7 @@ Menu items are:
     2. Delete alias
     3. Show aliases for domain
     4. Show all aliases
-    5. Back to main menu  
+    5. Back to main menu
 4. Database Management
     1. Export database as sql.gz
     2. Import database from sql.gz
