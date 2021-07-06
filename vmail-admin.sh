@@ -59,7 +59,8 @@ user_menu()
 	echo "3) Change user password"
 	echo "4) Change user quota"
 	echo "5) Change user sendonly"
-	echo "6) Back to main menu"
+	echo "6) Enable/Disable user"
+	echo "7) Back to main menu"
 	printline
 	read choose
 
@@ -85,6 +86,10 @@ user_menu()
 		  ;;
 
 		6)
+		  change_enabled
+		  ;;
+
+		7)
 		  menu
 		  ;;
 
@@ -563,6 +568,24 @@ change_sendonly()
         mysql -u $database_user -D $database_name -e "update accounts set sendonly='$sendonly' where username='$username' and domain='$domain';"
         user_menu 
 }
+
+change_enabled()
+{
+        check_database_exists
+        read_username
+        read_domain
+        check_domain_exists $domain "user_menu"
+        check_user_exists $username $domain "user_menu"
+
+        echo "Enter 0 to disable user or 1 to enable user:"
+        read enabled
+
+        printline 
+        echo "Changing enabled to $enabled for $username@$domain"
+        mysql -u $database_user -D $database_name -e "update accounts set enabled='$enabled' where username='$username' and domain='$domain';"
+        user_menu 
+}
+
 
 ###################################################
 #############  Domain functions  ##################
