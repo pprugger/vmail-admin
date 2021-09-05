@@ -20,7 +20,7 @@ menu()
 		echo "2) Domain Management"
 		echo "3) Aliases Management"
 		echo "4) Database Management"
-		echo "5) Exit"
+		echo "0) Exit"
 	printline
 	read choose
 
@@ -41,7 +41,7 @@ menu()
 		  database_menu
 		  ;;
 
-		5)
+		0)
 		  exit
 		  ;;
 
@@ -56,9 +56,10 @@ user_menu()
 	printline
 	echo "1) Add user"
 	echo "2) Delete user"
-	echo "3) Change user password"
-	echo "4) Change user quota"
-	echo "5) Back to main menu"
+	echo "3) Show all user"
+	echo "4) Change user password"
+	echo "5) Change user quota"
+	echo "0) Back to main menu"
 	printline
 	read choose
 
@@ -72,14 +73,18 @@ user_menu()
 		  ;;
 
 		3)
-		  change_pass
+		  show_all_user 
 		  ;;
 
 		4)
-		  change_quota
+		  change_pass
 		  ;;
 
 		5)
+		  change_quota
+		  ;;
+
+		0)
 		  menu
 		  ;;
 
@@ -96,7 +101,7 @@ domain_menu()
 	echo "2) Delete Domain"
 	echo "3) Show users for domain"
 	echo "4) Show all domains"
-	echo "5) Back to main menu"
+	echo "0) Back to main menu"
 	printline
 	read choose
 
@@ -117,7 +122,7 @@ domain_menu()
 		  show_domains
 		  ;;
 
-		5)
+		0)
 		  menu
 		  ;;
 
@@ -134,7 +139,7 @@ aliases_menu()
 	echo "2) Delete alias"
 	echo "3) Show aliases for domain"
 	echo "4) Show all aliases"
-	echo "5) Back to main menu"
+	echo "0) Back to main menu"
 	printline
 	read choose
 
@@ -155,7 +160,7 @@ aliases_menu()
 		  show_all_aliases
 		  ;;
 
-		5)
+		0)
 		  menu
 		  ;;
 
@@ -172,7 +177,7 @@ database_menu()
 	echo "2) Import database from sql.gz"
 	echo "3) Delete database"
 	echo "4) Initialize database"
-	echo "5) Back to main menu"
+	echo "0) Back to main menu"
 	printline
 	read choose
 
@@ -190,10 +195,10 @@ database_menu()
 		  ;;
 
 		4)
-			init_database
+  		  init_database
 			;;
 
-		5)
+		0)
 		  menu
 		  ;;
 
@@ -453,6 +458,19 @@ show_all_aliases()
 
 ###################################################
 #############  User functions  ####################
+show_all_user()
+{
+	check_database_exists
+	user_exist=`mysql -u $database_user -D $database_name -e "select * from accounts;"`
+	if [ "$user_exist" == "" ]; then
+		echo "No Users in database!"
+		user_menu
+	else
+		mysql -u $database_user -D $database_name -e "select id, username, domain, quota, enabled, sendonly from accounts;"
+		user_menu
+	fi
+}
+
 add_user()
 {
 	check_database_exists
